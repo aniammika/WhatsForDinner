@@ -35,8 +35,13 @@ namespace WhatsForDinner.ViewModel
         }
         public bool IsDinnerSelected => _selectedDinner != null;
 
-        public void Load()
+        public async Task LoadAsync()
         {
+            if (Dinners.Any())
+            {
+                return;
+            }
+
             var dinners = _dinnerDataProvider.LoadDinners();
             var cusines = _dinnerDataProvider.LoadCusines();
 
