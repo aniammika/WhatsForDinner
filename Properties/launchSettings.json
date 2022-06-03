@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WhatsForDinner (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WhatsForDinner (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
