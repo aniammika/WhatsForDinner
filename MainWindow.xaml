@@ -8,20 +8,43 @@
     xmlns:controls="using:WhatsForDinner.Controls"
     mc:Ignorable="d">
 
-    <Grid x:Name="root">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+    <Grid x:Name="root" Background="#424242">
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
-        <!--Header
-        <controls:HeaderControl Grid.ColumnSpan ="2"/>
-        -->
-      
-        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        
+        <!--Header -->
+        <StackPanel Grid.ColumnSpan="2" Background="#424242" Orientation="Horizontal">
+            <Image Source="/Images/logo_transparent.png" Width="300" HorizontalAlignment="Center"/>
+            <TextBlock Text="Nie wiesz? Wylosuj!" HorizontalAlignment="Center" FontSize="30" Foreground="#FF5B44"/>
+            <TextBlock Text="Version 1.0" FontSize="15" Foreground="#FF5B44"/>
+        </StackPanel>
+        
+        <!--Navigation-->
+        <StackPanel Grid.Column="0" Grid.Row="1"  Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBox Header="Szukaj"/>
+            <Button Content="Dodaj obiad"/>
+            <Button Content="Losuj obiad"/>
+        </StackPanel>
+        
+        <!--DinnerList-->
+        
+        <!--DinnerDetails-->
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="10">
+            <TextBox Header="Obiad"/>
+            <TextBox Header="Opis"/>
+            <CheckBox Margin="0 20 0 0">Ulubiony?</CheckBox>
+            <TextBox Header="Gdzie znaleźć przepis?"/>
+        </StackPanel>
+        
+    </Grid>
 
 </Window>
