@@ -11,40 +11,50 @@
     <Grid x:Name="root" Background="#424242">
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         
         <!--Header -->
-        <StackPanel Grid.ColumnSpan="2" Background="#424242" Orientation="Horizontal">
-            <Image Source="/Images/logo_transparent.png" Width="300" HorizontalAlignment="Center"/>
-            <TextBlock Text="Nie wiesz? Wylosuj!" HorizontalAlignment="Center" FontSize="30" Foreground="#FF5B44"/>
-            <TextBlock Text="Version 1.0" FontSize="15" Foreground="#FF5B44"/>
+        <StackPanel Grid.Column="0" Background="#424242" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Source="/Images/logo_transparent.png" Width="150" VerticalAlignment="Center"/>
         </StackPanel>
         
         <!--Navigation-->
-        <StackPanel Grid.Column="0" Grid.Row="1"  Orientation="Horizontal" VerticalAlignment="Top">
-            <TextBox Header="Szukaj"/>
-            <Button Content="Dodaj obiad"/>
-            <Button Content="Losuj obiad"/>
+        <StackPanel Grid.Column="1" Grid.Row="0"  Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBox Header="Szukaj" Margin="10 10 10 10" Width="200"/>
+            <Button Content="Dodaj obiad" Margin="10 40 10 10"/>
+            <Button Content="Losuj obiad" Margin="10 40 10 10"/>
         </StackPanel>
         
         <!--DinnerList-->
-        
+        <StackPanel Grid.Column="0" Grid.Row="1" BorderThickness="3" BorderBrush="#FFBA47" >
+            <TextBlock Text="Lista obiadków" Foreground="#FFBA47" FontSize="20" HorizontalAlignment="Center" Margin="20"/>
+        </StackPanel>
+
         <!--DinnerDetails-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Margin="10">
-            <TextBox Header="Obiad"/>
-            <TextBox Header="Opis"/>
-            <CheckBox Margin="0 20 0 0">Ulubiony?</CheckBox>
-            <TextBox Header="Gdzie znaleźć przepis?"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" Background="#292929" BorderThickness="3" BorderBrush="#FFBA47" >
+            <TextBox Header="Obiad" Foreground="#FFBA47"/>
+            <TextBox Header="Opis" Foreground="#FFBA47"/>
+            <CheckBox Margin="0 20 0 0" Foreground="#FFBA47">Ulubiony?</CheckBox>
+            <TextBox Header="Gdzie znaleźć przepis?" Foreground="#FFBA47"/>
+
+            <Button Content="Edytuj" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10 10 0 0"/>
         </StackPanel>
         
+        <!--BottomBar-->
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Background="#FFBA47" Orientation="Horizontal">
+            <TextBlock Text="Made by amika 2022" Foreground="#FF5B44" Margin="5 5 5 5" HorizontalAlignment="Center"/>
+            <SymbolIcon Symbol="Like" Foreground="#FF5B44" HorizontalAlignment="Center"/>
+            <TextBlock Text="Version 1.0" Foreground="#FF5B44" FontSize="12" Margin="5 5 5 5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+
     </Grid>
 
 </Window>
