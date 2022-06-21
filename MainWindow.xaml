@@ -12,48 +12,96 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition/>
+            <RowDefinition Height="3*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         
         <!--Header -->
-        <StackPanel Grid.Column="0" Background="#424242" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image Source="/Images/logo_transparent.png" Width="150" VerticalAlignment="Center"/>
-        </StackPanel>
-        
-        <!--Navigation-->
-        <StackPanel Grid.Column="1" Grid.Row="0"  Orientation="Horizontal" VerticalAlignment="Top">
-            <TextBox Header="Szukaj" Margin="10 10 10 10" Width="200"/>
-            <Button Content="Dodaj obiad" Margin="10 40 10 10"/>
-            <Button Content="Losuj obiad" Margin="10 40 10 10"/>
-        </StackPanel>
-        
-        <!--DinnerList-->
-        <StackPanel Grid.Column="0" Grid.Row="1" BorderThickness="3" BorderBrush="#FFBA47" >
-            <TextBlock Text="Lista obiadków" Foreground="#FFBA47" FontSize="20" HorizontalAlignment="Center" Margin="20"/>
-        </StackPanel>
+        <Grid Grid.ColumnSpan="2" Background="#F2EAD3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <StackPanel Grid.Column="2" Background="#424242" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="/Images/facebook_cover_photo_1.png" Height="100"  VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="0">
+                <Image Source="/Images/carrot.png" HorizontalAlignment="Center" Height="65" Width="100"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Image Source="/Images/carrot.png" HorizontalAlignment="Center" Height="65" Width="100"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+                <Image Source="/Images/carrot.png" HorizontalAlignment="Center" Height="65" Width="100"/>
+            </StackPanel>
+            
+        </Grid>
+
+
+    <!--LeftMenu-->
+        <Grid Grid.Column="0" Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!--Navigation-->
+            <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top">
+                <TextBox Header="Szukaj" Margin="10 10 10 10" Width="150"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal">
+                    <Button Margin="10">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Symbol="Add"></SymbolIcon>
+                            <TextBlock Text="Dodaj obiad" Margin="5 0 0 0"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <Button Content="Losuj obiad" Margin="10 10 10 10"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="Lista obiadków" Foreground="#FFBA47" FontSize="20" HorizontalAlignment="Center" Margin="20"/>
+            </StackPanel>
+            <ListView Grid.Row="3" Foreground="#F2EAD3" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollMode="Enabled">
+                <ListViewItem Foreground="#F2EAD3">Pomidorowa</ListViewItem>
+                <ListViewItem Foreground="#F2EAD3">Ogórkowa</ListViewItem>
+                <ListViewItem Foreground="#F2EAD3">Kapuśniak</ListViewItem>
+            </ListView>
+        </Grid>
 
         <!--DinnerDetails-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Background="#292929" BorderThickness="3" BorderBrush="#FFBA47" >
-            <TextBox Header="Obiad" Foreground="#FFBA47"/>
-            <TextBox Header="Opis" Foreground="#FFBA47"/>
-            <CheckBox Margin="0 20 0 0" Foreground="#FFBA47">Ulubiony?</CheckBox>
-            <TextBox Header="Gdzie znaleźć przepis?" Foreground="#FFBA47"/>
+        <Grid Grid.Column="1" Grid.Row="1" Background="#292929">
+        <StackPanel HorizontalAlignment="Left">
+            <TextBox Header="Obiad" Margin="10 20 0 10" Width="400"/>
+            <TextBox Header="Opis" Margin="10 20 0 10"/>
+            <CheckBox Margin="10 20 0 0">Ulubiony?</CheckBox>
+            <TextBox Header="Gdzie znaleźć przepis?" Margin="10 20 0 10"/>
+            <Button Content="Edytuj" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10 20 0 0"/>
+        </StackPanel>
+        </Grid>
 
-            <Button Content="Edytuj" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10 10 0 0"/>
-        </StackPanel>
-        
         <!--BottomBar-->
-        <StackPanel Grid.ColumnSpan="2" Grid.Row="2" Background="#FFBA47" Orientation="Horizontal">
-            <TextBlock Text="Made by amika 2022" Foreground="#FF5B44" Margin="5 5 5 5" HorizontalAlignment="Center"/>
-            <SymbolIcon Symbol="Like" Foreground="#FF5B44" HorizontalAlignment="Center"/>
-            <TextBlock Text="Version 1.0" Foreground="#FF5B44" FontSize="12" Margin="5 5 5 5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Grid Grid.ColumnSpan="2" Grid.Row="2" Background="#F2EAD3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Made by amika 2022" Foreground="#331313" Margin="5 5 5 5" HorizontalAlignment="Center"/>
+                <SymbolIcon Symbol="Like" Foreground="#331313" HorizontalAlignment="Center"/>
+                <TextBlock Text="Version 1.0" Foreground="#331313" FontSize="12" Margin="5 5 5 5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
+        </Grid>
 
     </Grid>
 
